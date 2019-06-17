@@ -19,8 +19,37 @@ def search(request):
 
     # return HttpResponse('okk')
     return render(request,'material/index.html',{"materials":materials})
+
 def addtion(request):
-    pass
+    clean_data = request.POST
+    if request.method=='POST' and clean_data:
+        # clean_data = request.POST
+        meterialName = clean_data.get('meterialName')
+        meterialType = clean_data.get('meterialType')
+        brand = clean_data.get('brand')
+        matrix = clean_data.get('matrix')
+        ligand = clean_data.get('ligand')
+        diameter = clean_data.get('diameter')
+        tolePressure = clean_data.get('tolePressure')
+        phRange = clean_data.get('phRange')
+        storeMethod = clean_data.get('storeMethod')
+        comFactor = clean_data.get('comFactor')
+        dbc = clean_data.get('dbc')
+        capacityRange = clean_data.get('capacityRange')
+        velocityPressure = clean_data.get('velocityPressure')
+        validtyPeriod = clean_data.get('validtyPeriod')
+        packingMethod = clean_data.get('packingMethod')
+        packingdetail = clean_data.get('packingdetail')
+        Meterials.objects.create(meterialName=meterialName,meterialType=meterialType,brand=brand,
+                                 matrix=matrix,ligand=ligand,diameter=diameter,tolePressure=tolePressure,
+                                 phRange=phRange,storeMethod=storeMethod,comFactor=comFactor,dbc=dbc,
+                                 capacityRange=capacityRange,velocityPressure=velocityPressure,validtyPeriod=validtyPeriod,
+                                 packingMethod=packingMethod,packingdetail=packingdetail)
+        # return render(request, 'material/addition.html')
+        return redirect(reverse('material:index', args=()))
+    else:
+        return render(request, 'material/addition.html')
+
 
 def modifys(request):
     pass
