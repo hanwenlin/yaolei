@@ -1518,7 +1518,8 @@ model</ColNames>
     </column>
     <column id="349" parent="250" name="comFactor">
       <Position>11</Position>
-      <DataType>decimal(5,2 digit)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="350" parent="250" name="dbc">
@@ -1529,12 +1530,14 @@ model</ColNames>
     </column>
     <column id="351" parent="250" name="capacityRange">
       <Position>13</Position>
-      <DataType>decimal(5,2 digit)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="352" parent="250" name="velocityPressure">
       <Position>14</Position>
-      <DataType>decimal(5,2 digit)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="353" parent="250" name="validtyPeriod">
