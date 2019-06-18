@@ -9,5 +9,5 @@ urlpatterns = [
     path('delete/<int:meterid>/',views.delete,name='delete'),
     path('search/',views.search,name='search'),
     path('addtion/',views.addtion,name='addtion'),
-    path('modifys/',views.modifys,name='modifys'),
+    path('modifys/<int:meterid>',views.modifys,name='modifys'),
 ]
