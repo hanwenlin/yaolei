@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}添加数据{% endblock %}
+{% block css_block %}
+
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'columnstatictis:modifys' column.id %}">
+    {% csrf_token %}
+
+            <label>填料名称 <input type="text" name="resin" id="resin" value="{{ column.resin.meterialName }}"></label>
+           <label>装柱项目 <input type="text" name="packingitem" id="packingitem" value="{{ column.packingitem }}"></label>
+<br/>
+            <td><label>层析柱编号 <input type="text" name="histcode" id="histcode" value="{{ column.histcode }}"></label>
+            <td><label>填料编号 <input type="text" name="resincode" id="resincode" value="{{ column.resincode }}"></label>
+
+        <br />
+            <label>最低装柱流速 <input type="text" name="lowestspeed" id="lowestspeed" value="{{ column.lowestspeed }}"></label>
+            <label>最高装柱流速 <input type="text" name="hightspeed" id="hightspeed" value="{{ column.hightspeed }}"></label>
+
+        <br />
+           <label>装柱压力 <input type="text" name="pressure" id="pressure" value="{{ column.pressure }}"></label></td>
+            <label>生产流速 <input type="text" name="yieldspeed" id="yieldspeed" value="{{ column.yieldspeed }}"></label>
+
+        <br>
+            <label>柱高 <input type="text" name="columnheight" id="columnheight" value="{{ column.columnheight }}"></label>
+            <label>层析柱直径 <input type="text" name="columndimeter" id="columndimeter" value="{{ column.columndimeter }}"></label>
+
+        <br>
+            <label>对称性 <input type="text" name="symmetry" id="symmetry" value="{{ column.symmetry }}"></label>
+            <label>HETP <input type="text" name="hetp" id="hetp" value="{{ column.hetp }}"></label>
+
+        <br>
+            <label>备注 <input type="text" name="comment" id="comment" value="{{ column.comment }}"></label>
+
+        <br>
+           <input type="submit" name="submit" id="submit" value="修改">
+
+    </form>
+{% endblock %}
